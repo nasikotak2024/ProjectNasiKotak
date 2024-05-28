@@ -15,6 +15,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.05f; // Kecepatan efek mengetik
 
     private bool dialogueActivated;
+    private bool isTyping;
     private int step;
     private Coroutine typingCoroutine;
 
@@ -28,36 +29,56 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && dialogueActivated)
         {
-            if (step >= speaker.Length)
+            if (isTyping)
             {
-                dialogueCanvas.SetActive(false);
-                step = 0;
-                Time.timeScale = 1f; // Mengaktifkan kembali waktu
+                // If currently typing, skip to the end of the current sentence
+                FinishTyping();
             }
             else
             {
-                dialogueCanvas.SetActive(true);
-                speakerText.text = speaker[step];
-                if (typingCoroutine != null)
+                if (step >= speaker.Length)
                 {
-                    StopCoroutine(typingCoroutine);
+                    dialogueCanvas.SetActive(false);
+                    step = 0;
+                    Time.timeScale = 1f; // Mengaktifkan kembali waktu
                 }
-                typingCoroutine = StartCoroutine(TypeSentence(dialogueWords[step]));
-                portraitImage.sprite = portrait[step];
-                Time.timeScale = 0f; // Menghentikan waktu
-                step++;
+                else
+                {
+                    dialogueCanvas.SetActive(true);
+                    speakerText.text = speaker[step];
+                    if (typingCoroutine != null)
+                    {
+                        StopCoroutine(typingCoroutine);
+                    }
+                    typingCoroutine = StartCoroutine(TypeSentence(dialogueWords[step]));
+                    portraitImage.sprite = portrait[step];
+                    Time.timeScale = 0f; // Menghentikan waktu
+                    step++;
+                }
             }
         }
     }
 
     private IEnumerator TypeSentence(string sentence)
     {
+        isTyping = true;
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
+        isTyping = false;
+    }
+
+    private void FinishTyping()
+    {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+        dialogueText.text = dialogueWords[step - 1]; // Display the full current sentence
+        isTyping = false;
     }
 
     // Ketika objek memasuki trigger
