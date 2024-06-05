@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 08b7b33e6629b2b4c9e1692c9cf38a82
+guid: 04345055d08ae5542ba06d6a444bbd0f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
-      name: Nirma front walking_Clip
-    second: {fileID: 7400000, guid: b14fcbf9aa74b014fa7d85356c0b20ec, type: 2}
+      name: Nirma side walking rev_Clip
+    second: {fileID: 7400000, guid: fb226095a34231b458285edf652e9f84, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -78,7 +78,7 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -91,7 +91,7 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -102,7 +102,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638524989195853979
+  platformSettingsDirtyTick: 638532094651855976
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -126,58 +126,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Nirma front walking_Frame_0
+  - name: Layer 1_Frame_0
     originalName: 
-    pivot: {x: 0.45714286, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 35
-      height: 64
-    spriteID: e32cba9d5725ea4428b6c0f770b91aa7
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
-  - name: Nirma front walking_Frame_1
-    originalName: 
-    pivot: {x: 0.4848485, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 148
-      width: 33
-      height: 64
-    spriteID: 73efae3856f35644599bbb77e0458f15
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 148}
-  - name: Nirma front walking_Frame_2
-    originalName: 
-    pivot: {x: 0.45714286, y: 0}
+    pivot: {x: 0.5833333, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 76
-      width: 35
+      width: 36
       height: 64
-    spriteID: d2128c9ea4ea0844ba03bc0dc0d1037f
+    spriteID: c711f50a6c9ea4f41a2c7f16b72029a0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -186,18 +146,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 76}
-  - name: Nirma front walking_Frame_3
+  - name: Layer 1_Frame_1
     originalName: 
-    pivot: {x: 0.42424244, y: 0}
+    pivot: {x: 0.55263156, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
+      x: 4
       y: 4
-      width: 33
+      width: 38
       height: 64
-    spriteID: 257f610ff016d5842ac109fa4be91cdb
+    spriteID: 75ca5dcd48b88ac468e5fcec98466912
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -205,48 +165,168 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 47, y: 4}
-  spriteSheetImportData: []
+    uvTransform: {x: 4, y: 4}
+  - name: Layer 1_Frame_2
+    originalName: 
+    pivot: {x: 0.5833333, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 148
+      width: 36
+      height: 64
+    spriteID: e57f067b804405e4d8dca74688071209
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 148}
+  - name: Layer 1_Frame_3
+    originalName: 
+    pivot: {x: 0.6, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 4
+      width: 35
+      height: 64
+    spriteID: 445a94a894108994fad70e67256d1138
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 50, y: 4}
+  spriteSheetImportData:
+  - name: Nirma side walking rev_0
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 148
+      width: 36
+      height: 64
+    spriteID: 434e972b87d53304d95331dbd88905be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Nirma side walking rev_1
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 36
+      height: 64
+    spriteID: 2c3ad4198b7324b47b371b82484eaedf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Nirma side walking rev_2
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 38
+      height: 64
+    spriteID: 2a4dd9e4b10fcd6439e83c3a8a7beac8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Nirma side walking rev_3
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 4
+      width: 35
+      height: 64
+    spriteID: 206595bd3d15d344d8bfa030f2c1b0a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: 1573695145
-    name: Nirma front walking
-    layerFlags: 0
+    guid: 1317222744
+    name: Layer 1
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Nirma front walking_Frame_0
+    - name: Layer 1_Frame_0
       frameIndex: 0
       cellRect:
-        x: 16
+        x: 11
         y: 0
-        width: 35
+        width: 36
         height: 64
-      spriteId: e32cba9d5725ea4428b6c0f770b91aa7
-    - name: Nirma front walking_Frame_1
+      spriteId: c711f50a6c9ea4f41a2c7f16b72029a0
+    - name: Layer 1_Frame_1
       frameIndex: 1
       cellRect:
-        x: 16
+        x: 11
         y: 0
-        width: 33
+        width: 38
         height: 64
-      spriteId: 73efae3856f35644599bbb77e0458f15
-    - name: Nirma front walking_Frame_2
+      spriteId: 75ca5dcd48b88ac468e5fcec98466912
+    - name: Layer 1_Frame_2
       frameIndex: 2
       cellRect:
-        x: 16
+        x: 11
+        y: 0
+        width: 36
+        height: 64
+      spriteId: e57f067b804405e4d8dca74688071209
+    - name: Layer 1_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 11
         y: 0
         width: 35
         height: 64
-      spriteId: d2128c9ea4ea0844ba03bc0dc0d1037f
-    - name: Nirma front walking_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 18
-        y: 0
-        width: 33
-        height: 64
-      spriteId: 257f610ff016d5842ac109fa4be91cdb
+      spriteId: 445a94a894108994fad70e67256d1138
     linkedCells: []
     parentIndex: -1
   platformSettings:
