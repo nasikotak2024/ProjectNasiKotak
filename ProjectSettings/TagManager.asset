@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - Terrain
   - Perceiver
+  - Batu
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Latar
-  - 
+  - Batu
   - 
   - 
   - 
