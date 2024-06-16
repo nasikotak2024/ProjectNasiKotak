@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,7 +20,7 @@ public class PauseMenu : MonoBehaviour
         gameManager = GameManager.instance;
 
         saveGameButton.onClick.AddListener(SaveGame);
-        mainMenuButton.onClick.AddListener(GoToMainMenu);
+        mainMenuButton.onClick.AddListener(MainMenu);
         quitGameButton.onClick.AddListener(QuitGame);
     }
 
@@ -59,10 +61,10 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void GoToMainMenu()
+    void MainMenu()
     {
         Time.timeScale = 1f; // Resume game time
-        SceneManager.LoadScene("Main Menu"); // Ganti dengan nama scene Main Menu Anda
+        SceneManager.LoadScene("Main_Menu"); // Ganti dengan nama scene Main Menu Anda
     }
 
     void QuitGame()

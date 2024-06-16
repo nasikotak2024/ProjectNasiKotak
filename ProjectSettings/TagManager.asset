@@ -9,6 +9,10 @@ TagManager:
   - Terrain
   - Perceiver
   - Batu
+  - Barrel
+  - Collect
+  - Collectible
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -18,9 +22,9 @@ TagManager:
   - UI
   - Latar
   - Batu
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - Barrel
   - 
   - 
   - 

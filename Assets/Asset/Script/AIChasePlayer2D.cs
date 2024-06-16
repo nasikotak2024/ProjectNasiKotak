@@ -2,60 +2,61 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using Aoiti.Pathfinding; // Import the pathfinding library
+using Aoiti.Pathfinding;
 
 public class AdvancedAIChaseAndReturn2D : MonoBehaviour
 {
-    public Transform player; // Reference to the player
-    public float detectionRadius = 10f; // Detection radius for the AI
-    public float moveSpeed = 2f; // Movement speed of the AI
+    private PlayerHide playerHideScript;
+    public Transform player;
+    public float detectionRadius = 10f;
+    public float moveSpeed = 2f;
 
-    public Image gameOverImage; // Reference to UI Image for game over
-    public AudioSource gameOverAudio; // Reference to AudioSource for game over sound
 
     private Rigidbody2D rb;
     private Vector2 startPosition;
     private bool isReturning = false;
     private Coroutine returnCoroutine;
+    private int patrolIndex = 0;
+    private int currentPatrolIndex = 0;
+    public float patrolPointDistance = 0.2f;
+    public float patrolWaitTime = 3f;
+    public float chaseStopDistance = 15f;
 
     [Header("Pathfinding")]
-    [SerializeField] float gridSize = 0.5f; // Increase patience or gridSize for larger maps
+    [SerializeField] float gridSize = 0.5f;
     private Pathfinder<Vector2> pathfinder;
     private List<Vector2> pathLeftToGo = new List<Vector2>();
     [SerializeField] LayerMask obstacles;
     [SerializeField] bool searchShortcut = false;
     [SerializeField] bool drawDebugLines;
 
+    [Header("Patrol Points")]
+    public List<Transform> patrolPoints;
+
+    private CapsuleCollider2D capsuleCollider;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
-        startPosition = rb.position; // Remember the AI's starting position
-        pathfinder = new Pathfinder<Vector2>(GetDistance, GetNeighbourNodes, 1000); // Initialize pathfinder
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        playerHideScript = player.GetComponent<PlayerHide>();
 
-        if (gameOverImage != null)
-        {
-            gameOverImage.gameObject.SetActive(false); // Disable game over image at start
-        }
-        else
-        {
-            Debug.LogError("GameOver Image is not assigned in the Inspector.");
-        }
+        rb = GetComponent<Rigidbody2D>();
+        startPosition = rb.position;
+        pathfinder = new Pathfinder<Vector2>(GetDistance, GetNeighbourNodes, 1000);
 
-        if (gameOverAudio == null)
-        {
-            Debug.LogError("GameOver Audio is not assigned in the Inspector.");
-        }
+       
     }
 
     void Update()
     {
+
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= detectionRadius)
+        if (distanceToPlayer <= detectionRadius && !playerHideScript.IsHidden())
         {
             if (isReturning && returnCoroutine != null)
             {
-                StopCoroutine(returnCoroutine); // Stop returning to start position
+                StopCoroutine(returnCoroutine);
                 isReturning = false;
             }
 
@@ -63,10 +64,17 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
         }
         else if (!isReturning)
         {
-            returnCoroutine = StartCoroutine(ReturnToStartPosition());
+            if (patrolPoints.Count > 0)
+            {
+                Patrol();
+            }
+            else
+            {
+                returnCoroutine = StartCoroutine(ReturnToStartPosition());
+            }
         }
 
-        if (pathLeftToGo.Count > 0) // If the target is not yet reached
+        if (pathLeftToGo.Count > 0)
         {
             Vector3 dir = (Vector3)pathLeftToGo[0] - transform.position;
             transform.position += dir.normalized * moveSpeed * Time.deltaTime;
@@ -79,20 +87,48 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
 
         if (drawDebugLines)
         {
-            for (int i = 0; i < pathLeftToGo.Count - 1; i++) // Visualize your path in the scene view
+            for (int i = 0; i < pathLeftToGo.Count - 1; i++)
             {
                 Debug.DrawLine(pathLeftToGo[i], pathLeftToGo[i + 1], Color.red);
             }
         }
     }
 
+    private void Patrol()
+    {
+        if (pathLeftToGo.Count == 0)
+        {
+            GetMoveCommand(patrolPoints[patrolIndex].position);
+            patrolIndex = (patrolIndex + 1) % patrolPoints.Count;
+        }
+    }
+
     private IEnumerator ReturnToStartPosition()
     {
         isReturning = true;
-        while (Vector2.Distance(rb.position, startPosition) > 0.1f)
+        Transform targetPatrolPoint = patrolPoints[currentPatrolIndex];
+
+        while (Vector2.Distance(transform.position, targetPatrolPoint.position) > patrolPointDistance)
         {
-            GetMoveCommand(startPosition);
-            yield return new WaitForSeconds(0.5f); // Wait for a short time before recalculating path
+            Vector2 direction = ((Vector2)targetPatrolPoint.position - (Vector2)transform.position).normalized;
+            transform.position = Vector2.MoveTowards(transform.position, targetPatrolPoint.position, moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(patrolWaitTime);
+
+        currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
+        isReturning = false;
+    }
+
+    private IEnumerator ReturnToPatrolStart()
+    {
+        isReturning = true;
+        Vector2 patrolStart = patrolPoints[0].position;
+        while (Vector2.Distance(rb.position, patrolStart) > 0.1f)
+        {
+            GetMoveCommand(patrolStart);
+            yield return new WaitForSeconds(0.5f);
         }
         isReturning = false;
     }
@@ -101,7 +137,7 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
     {
         Vector2 closestNode = GetClosestNode(transform.position);
         List<Vector2> path;
-        if (pathfinder.GenerateAstarPath(closestNode, GetClosestNode(target), out path)) // Generate path between two points on grid that are close to the transform position and the assigned target
+        if (pathfinder.GenerateAstarPath(closestNode, GetClosestNode(target), out path))
         {
             if (searchShortcut && path.Count > 0)
                 pathLeftToGo = ShortenPath(path);
@@ -120,7 +156,7 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
 
     float GetDistance(Vector2 A, Vector2 B)
     {
-        return (A - B).sqrMagnitude; // Uses square magnitude to lessen the CPU time
+        return (A - B).sqrMagnitude;
     }
 
     Dictionary<Vector2, float> GetNeighbourNodes(Vector2 pos)
@@ -164,28 +200,17 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
     }
 
     // Handle collision with player
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    public void PlayerHiding(bool isHiding)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (isHiding)
         {
-            GameOver();
+            if (returnCoroutine != null)
+            {
+                StopCoroutine(returnCoroutine);
+                returnCoroutine = StartCoroutine(ReturnToPatrolStart());
+            }
         }
-    }
-
-    // Game over function
-    private void GameOver()
-    {
-        if (gameOverImage != null)
-        {
-            gameOverImage.gameObject.SetActive(true);
-        }
-
-        if (gameOverAudio != null)
-        {
-            gameOverAudio.Play();
-        }
-
-        Time.timeScale = 0f; // Stop the game
     }
 
     // Draw detection radius in the scene view

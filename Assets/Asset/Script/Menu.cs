@@ -2,18 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Menu : MonoBehaviour
+
+public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void StartGame()
+    public Button mainMenuGameButton;
+    public GameObject GameOverUI;
+
+    void Start()
     {
-        SceneManager.LoadScene("Halaman Kampus");
+        GameOverUI.SetActive(false);
+
+        mainMenuGameButton.onClick.AddListener(MainMenu);
+
+    }
+    // Update is called once per frame
+    void MainMenu()
+    {
+        SceneManager.LoadScene("Main_Menu"); // Ganti dengan nama scene Main Menu Anda
     }
 
-    // Update is called once per frame
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 }
