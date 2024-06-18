@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f7073d254ad1341b9a344c38117201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GantiScene: Main Menu
+  GantiScene: Desa
 --- !u!61 &623354154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1603,7 +1603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Objective
+  m_text: Objective \nTemui Pak Banu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 57.5
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4355,7 +4355,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1995771336}
-  - component: {fileID: 1995771335}
   m_Layer: 0
   m_Name: ObjectiveManager
   m_TagString: Untagged
@@ -4363,20 +4362,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1995771335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995771334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69eaa64ff08a1584a9fbab2e0db89399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemNames: []
-  objectiveText: {fileID: 730801090}
 --- !u!4 &1995771336
 Transform:
   m_ObjectHideFlags: 0

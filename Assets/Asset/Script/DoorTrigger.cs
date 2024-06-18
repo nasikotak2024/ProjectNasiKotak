@@ -9,7 +9,14 @@ public class DoorTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene(GantiScene);
+            if (ObjectiveManager.instance.isPakBanuDialogCompleted)
+            {
+                SceneManager.LoadScene("Desa"); // Pindah ke scene 1
+            }
+            else
+            {
+                SceneManager.LoadScene(GantiScene);
+            }
         }
 
         

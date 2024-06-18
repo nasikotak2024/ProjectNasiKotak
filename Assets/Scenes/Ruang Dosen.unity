@@ -1616,7 +1616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Objective
+  m_text: Objective \nTemui Pak Banu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 57.5
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3078,12 +3078,13 @@ MonoBehaviour:
   dialogueText: {fileID: 1991673847}
   portraitImage: {fileID: 362298369}
   speaker:
-  - Rumlah
+  - Ranu
   dialogueWords:
   - ...
   portrait:
-  - {fileID: 0}
+  - {fileID: -2409530107593287707, guid: 998d7a59ef5c2c149962cb2ecff3fae2, type: 3}
   typingSpeed: 0.05
+  isPakBanu: 0
 --- !u!1 &734344095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3865,6 +3866,7 @@ MonoBehaviour:
   - {fileID: 4775108153550247571, guid: be050e39a6ebb304b8d88433dd2b8647, type: 3}
   - {fileID: 5342308601464108211, guid: 4d6f050b1ee2d274e9acc0873290d34a, type: 3}
   typingSpeed: 0.05
+  isPakBanu: 1
 --- !u!212 &847226448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4837,7 +4839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1258231103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5582,12 +5584,13 @@ MonoBehaviour:
   dialogueText: {fileID: 1991673847}
   portraitImage: {fileID: 362298369}
   speaker:
-  - Romlah
+  - Rani
   dialogueWords:
   - ...
   portrait:
   - {fileID: 4770401217713790617, guid: c42de244da4bc9c4781656f2a7b6d780, type: 3}
   typingSpeed: 0.05
+  isPakBanu: 0
 --- !u!70 &1409054348
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5870,8 +5873,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eaa64ff08a1584a9fbab2e0db89399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemNames: []
+  itemNames:
+  - Temui Pak Banu
   objectiveText: {fileID: 363212239}
+  objectiveUI: {fileID: 1100804043}
+  isPakBanuDialogCompleted: 0
 --- !u!4 &1422441177
 Transform:
   m_ObjectHideFlags: 0
@@ -6277,90 +6283,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1511397595
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1511397597}
-  - component: {fileID: 1511397596}
-  m_Layer: 0
-  m_Name: Hexagon Flat-Top
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1511397596
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511397595}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 0.8828125}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1511397597
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511397595}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 12}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540807310
 GameObject:
   m_ObjectHideFlags: 0
@@ -7849,7 +7771,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 1511397597}
   - {fileID: 1241597002}
   - {fileID: 847226449}
   - {fileID: 1100804048}

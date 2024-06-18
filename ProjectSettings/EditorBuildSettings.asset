@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Ruang Dosen.unity
     guid: 90591fc45e64380439e7b45dc0cdaebb
   - enabled: 1
+    path: Assets/Scenes/Desa.unity
+    guid: ab768234521b27b43b3b10fad8fe7570
+  - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

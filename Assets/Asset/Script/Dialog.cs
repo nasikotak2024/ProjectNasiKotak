@@ -19,6 +19,8 @@ public class Dialogue : MonoBehaviour
     private bool isTyping;
     private int step;
     private Coroutine typingCoroutine;
+    [SerializeField] private bool isPakBanu = false; // Menentukan apakah NPC ini adalah Pak Banu
+
     
 
     void Start()
@@ -43,7 +45,11 @@ public class Dialogue : MonoBehaviour
                     dialogueCanvas.SetActive(false);
                     step = 0;
                     Time.timeScale = 1f; // Mengaktifkan kembali waktu
+                    if (isPakBanu)
+                {
+                    ObjectiveManager.instance.isPakBanuDialogCompleted = true;
                 }
+                } 
                 else
                 {
                     dialogueCanvas.SetActive(true);

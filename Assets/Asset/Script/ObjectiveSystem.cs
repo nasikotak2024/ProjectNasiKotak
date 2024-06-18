@@ -86,4 +86,13 @@ public class ObjectiveManager : MonoBehaviour
     {
         return itemNames[itemNames.Count - 1];
     }
+
+    public void CompletePakBanuDialog()
+    {
+        isPakBanuDialogCompleted = true;
+        // Update objective jika diperlukan
+        // Contoh: Tambahkan objective baru setelah berbicara dengan Pak Banu
+        AddObjective("Pergi dan dapatkan data yang valid");
+        UpdateObjectiveUI();
+    }
 }
