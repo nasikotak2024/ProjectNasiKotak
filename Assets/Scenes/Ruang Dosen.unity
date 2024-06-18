@@ -1758,7 +1758,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.049156874}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1769,7 +1769,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.0983138}
   m_EdgeRadius: 0
 --- !u!212 &377445787
 SpriteRenderer:
@@ -2419,7 +2419,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.030125558, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2430,7 +2430,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0602511, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &575142000
 SpriteRenderer:
@@ -2630,7 +2630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &623544633
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3084,7 +3084,9 @@ MonoBehaviour:
   portrait:
   - {fileID: -2409530107593287707, guid: 998d7a59ef5c2c149962cb2ecff3fae2, type: 3}
   typingSpeed: 0.05
+  nextSceneName: 
   isPakBanu: 0
+  isPakPurbaya: 0
 --- !u!1 &734344095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,7 +3868,9 @@ MonoBehaviour:
   - {fileID: 4775108153550247571, guid: be050e39a6ebb304b8d88433dd2b8647, type: 3}
   - {fileID: 5342308601464108211, guid: 4d6f050b1ee2d274e9acc0873290d34a, type: 3}
   typingSpeed: 0.05
+  nextSceneName: 
   isPakBanu: 1
+  isPakPurbaya: 0
 --- !u!212 &847226448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4839,7 +4843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1258231103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5590,7 +5594,9 @@ MonoBehaviour:
   portrait:
   - {fileID: 4770401217713790617, guid: c42de244da4bc9c4781656f2a7b6d780, type: 3}
   typingSpeed: 0.05
+  nextSceneName: 
   isPakBanu: 0
+  isPakPurbaya: 0
 --- !u!70 &1409054348
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5844,55 +5850,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1422441175
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1422441177}
-  - component: {fileID: 1422441176}
-  m_Layer: 0
-  m_Name: ObjectiveManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1422441176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422441175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69eaa64ff08a1584a9fbab2e0db89399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemNames:
-  - Temui Pak Banu
-  objectiveText: {fileID: 363212239}
-  objectiveUI: {fileID: 1100804043}
-  isPakBanuDialogCompleted: 0
---- !u!4 &1422441177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422441175}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.79975796, y: -1.4317306, z: -0.021831296}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452818310
 GameObject:
   m_ObjectHideFlags: 0
@@ -7327,6 +7284,54 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1962910039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1962910041}
+  - component: {fileID: 1962910040}
+  m_Layer: 0
+  m_Name: ObjectiveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1962910040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962910039}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69eaa64ff08a1584a9fbab2e0db89399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNames: []
+  objectiveText: {fileID: 363212239}
+  objectiveUI: {fileID: 1258231102}
+  isPakBanuDialogCompleted: 0
+--- !u!4 &1962910041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962910039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.79975796, y: -1.4317306, z: -0.021831296}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991673845
 GameObject:
   m_ObjectHideFlags: 0
@@ -7784,4 +7789,4 @@ SceneRoots:
   - {fileID: 692672371}
   - {fileID: 1409054344}
   - {fileID: 623544634}
-  - {fileID: 1422441177}
+  - {fileID: 1962910041}

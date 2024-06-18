@@ -11,7 +11,7 @@ public class DoorTrigger : MonoBehaviour
         {
             if (ObjectiveManager.instance.isPakBanuDialogCompleted)
             {
-                SceneManager.LoadScene("Desa"); // Pindah ke scene 1
+                SceneManager.LoadScene("Cutscene 3"); // Pindah ke scene 1
             }
             else
             {

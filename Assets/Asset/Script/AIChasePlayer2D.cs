@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using Aoiti.Pathfinding;
+using TMPro;
 
 public class AdvancedAIChaseAndReturn2D : MonoBehaviour
 {
@@ -10,8 +11,7 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
     public Transform player;
     public float detectionRadius = 10f;
     public float moveSpeed = 2f;
-
-
+    
     private Rigidbody2D rb;
     private Vector2 startPosition;
     private bool isReturning = false;
@@ -21,7 +21,7 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
     public float patrolPointDistance = 0.2f;
     public float patrolWaitTime = 3f;
     public float chaseStopDistance = 15f;
-
+    
     [Header("Pathfinding")]
     [SerializeField] float gridSize = 0.5f;
     private Pathfinder<Vector2> pathfinder;
@@ -29,27 +29,33 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
     [SerializeField] LayerMask obstacles;
     [SerializeField] bool searchShortcut = false;
     [SerializeField] bool drawDebugLines;
-
+    
     [Header("Patrol Points")]
     public List<Transform> patrolPoints;
-
+    
     private CapsuleCollider2D capsuleCollider;
+
+    [Header("Game Over")]
+    public Canvas gameOverCanvas; // Canvas untuk Game Over
+    public TMP_Text gameOverText; // Text untuk Game Over
+    private bool isGameOver = false; // Status Game Over
 
     void Start()
     {
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         playerHideScript = player.GetComponent<PlayerHide>();
-
+        
         rb = GetComponent<Rigidbody2D>();
         startPosition = rb.position;
         pathfinder = new Pathfinder<Vector2>(GetDistance, GetNeighbourNodes, 1000);
 
-       
+        gameOverCanvas.gameObject.SetActive(false); // Menonaktifkan canvas Game Over saat mulai
     }
 
     void Update()
     {
-
+        if (isGameOver) return; // Jika Game Over, hentikan update
+        
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         if (distanceToPlayer <= detectionRadius && !playerHideScript.IsHidden())
@@ -61,6 +67,10 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
             }
 
             GetMoveCommand(player.position);
+            if (distanceToPlayer <= capsuleCollider.size.x) // Cek jika pemain tertangkap
+            {
+                GameOver(); // Panggil metode Game Over
+            }
         }
         else if (!isReturning)
         {
@@ -200,7 +210,6 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
     }
 
     // Handle collision with player
-    
     public void PlayerHiding(bool isHiding)
     {
         if (isHiding)
@@ -211,6 +220,14 @@ public class AdvancedAIChaseAndReturn2D : MonoBehaviour
                 returnCoroutine = StartCoroutine(ReturnToPatrolStart());
             }
         }
+    }
+
+    // Game Over method
+    private void GameOver()
+    {
+        isGameOver = true;
+        gameOverCanvas.gameObject.SetActive(true); // Tampilkan canvas Game Over
+        Time.timeScale = 0f; // Hentikan waktu
     }
 
     // Draw detection radius in the scene view

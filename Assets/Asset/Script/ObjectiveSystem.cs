@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement; // Untuk menggunakan SceneManager
+using System.Collections;
 
 public class ObjectiveManager : MonoBehaviour
 {
@@ -20,6 +23,7 @@ public class ObjectiveManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject); // Membuat ObjectiveManager tidak hancur saat pergantian scene
+            SceneManager.sceneLoaded += OnSceneLoaded; // Mendaftarkan metode callback untuk event pergantian scene
         }
         else
         {
@@ -29,6 +33,21 @@ public class ObjectiveManager : MonoBehaviour
 
     private void Start()
     {
+        UpdateObjectiveText();
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded; // Unregister the callback when the object is destroyed
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Cari kembali referensi UI di scene baru
+        objectiveText = GameObject.Find("ObjectiveText")?.GetComponent<TMP_Text>();
+        objectiveUI = GameObject.Find("ObjectiveUI");
+        
+        // Perbarui teks objective
         UpdateObjectiveText();
     }
 
@@ -43,6 +62,9 @@ public class ObjectiveManager : MonoBehaviour
 
     private void UpdateObjectiveText()
     {
+        if (objectiveText == null || objectiveUI == null)
+            return;
+
         objectiveText.text = "Objective:\n";
         foreach (string itemName in itemNames)
         {
@@ -55,7 +77,7 @@ public class ObjectiveManager : MonoBehaviour
                 objectiveText.text += "<color=white>" + itemName + "</color>\n";
             }
         }
-        objectiveUI.SetActive(true);
+        objectiveUI.SetActive(false);
     }
 
     public bool AreAllItemsCollected()

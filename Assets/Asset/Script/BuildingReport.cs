@@ -67,7 +67,7 @@ public class BuildingReport : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && ObjectiveManager.instance.AreAllItemsCollected())
+        if (collision.CompareTag("Player"))
         {
             Time.timeScale = 1f; // Resume game time
         }

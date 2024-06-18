@@ -8,11 +8,10 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public Button mainMenuGameButton;
-    public GameObject GameOverUI;
+
 
     void Start()
     {
-        GameOverUI.SetActive(false);
 
         mainMenuGameButton.onClick.AddListener(MainMenu);
 

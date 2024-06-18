@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement; // Untuk menggunakan SceneManager
 using System.Collections;
 
 public class Dialogue : MonoBehaviour
@@ -13,15 +14,14 @@ public class Dialogue : MonoBehaviour
     [SerializeField] [TextArea] private string[] dialogueWords;
     [SerializeField] private Sprite[] portrait;
     [SerializeField] private float typingSpeed = 0.05f; // Kecepatan efek mengetik
-    
+    [SerializeField] private string nextSceneName; // Nama scene untuk berpindah setelah dialog selesai
+    [SerializeField] private bool isPakBanu = false; // Menentukan apakah NPC ini adalah Pak Banu
+    [SerializeField] private bool isPakPurbaya = false; // Menentukan apakah NPC ini adalah Pak Purbaya
 
     private bool dialogueActivated;
     private bool isTyping;
     private int step;
     private Coroutine typingCoroutine;
-    [SerializeField] private bool isPakBanu = false; // Menentukan apakah NPC ini adalah Pak Banu
-
-    
 
     void Start()
     {
@@ -46,10 +46,14 @@ public class Dialogue : MonoBehaviour
                     step = 0;
                     Time.timeScale = 1f; // Mengaktifkan kembali waktu
                     if (isPakBanu)
-                {
-                    ObjectiveManager.instance.isPakBanuDialogCompleted = true;
+                    {
+                        ObjectiveManager.instance.isPakBanuDialogCompleted = true;
+                    }
+                    if (isPakPurbaya)
+                    {
+                        SceneManager.LoadScene(nextSceneName); // Pindah ke scene berikutnya setelah dialog dengan Pak Purbaya selesai
+                    }
                 }
-                } 
                 else
                 {
                     dialogueCanvas.SetActive(true);

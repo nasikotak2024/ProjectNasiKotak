@@ -1,5 +1,8 @@
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement; // Untuk menggunakan SceneManager
+using System.Collections;
 public class CollectibleItem : MonoBehaviour
 {
     public string itemName; // Nama item yang akan dikumpulkan

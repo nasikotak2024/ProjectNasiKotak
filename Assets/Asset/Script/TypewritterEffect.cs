@@ -1,13 +1,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class TypewriterEffect : MonoBehaviour
 {
     public Text displayText; // UI Text komponen
     public Image displayImage; // UI Image komponen
     public float typingSpeed = 0.05f; // Kecepatan mengetik
-    public string[] sentences; // Array kalimat
+    [SerializeField] [TextArea] public string[] sentences; // Array kalimat
     private int index; // Indeks kalimat saat ini
     private bool isTyping = false;
     private bool cancelTyping = false;
