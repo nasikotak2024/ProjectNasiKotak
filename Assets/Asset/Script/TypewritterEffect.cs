@@ -11,6 +11,8 @@ public class TypewriterEffect : MonoBehaviour
     private int index; // Indeks kalimat saat ini
     private bool isTyping = false;
     private bool cancelTyping = false;
+    [SerializeField] private string GantiScene;
+
 
     void Start()
     {
@@ -36,7 +38,7 @@ public class TypewriterEffect : MonoBehaviour
                 else
                 {
                     // Ganti ke scene berikutnya
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("Halaman Kampus");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(GantiScene);
                 }
             }
         }

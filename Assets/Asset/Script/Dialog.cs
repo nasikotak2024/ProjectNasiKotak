@@ -13,11 +13,13 @@ public class Dialogue : MonoBehaviour
     [SerializeField] [TextArea] private string[] dialogueWords;
     [SerializeField] private Sprite[] portrait;
     [SerializeField] private float typingSpeed = 0.05f; // Kecepatan efek mengetik
+    
 
     private bool dialogueActivated;
     private bool isTyping;
     private int step;
     private Coroutine typingCoroutine;
+    
 
     void Start()
     {

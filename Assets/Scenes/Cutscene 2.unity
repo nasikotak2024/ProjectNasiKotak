@@ -185,7 +185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &406505270
 RectTransform:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2bfde1cffba4d7942a5a9996ade783f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7843b638d43746849aa3ad670e25f75c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -348,6 +348,7 @@ MonoBehaviour:
   - consectetur adipiscing elit
   - sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
   - ' Ut enim ad minim veniam'
+  GantiScene: Main_Menu
 --- !u!4 &1406886853
 Transform:
   m_ObjectHideFlags: 0

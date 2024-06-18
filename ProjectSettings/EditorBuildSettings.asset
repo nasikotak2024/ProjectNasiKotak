@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Cutscene.unity
+    path: Assets/Scenes/Cutscene 1.unity
     guid: 962bc03e64cd6334f80ed9c1b4cf6cc5
+  - enabled: 1
+    path: Assets/Scenes/Cutscene 2.unity
+    guid: 55b05680d7f7b1d458f9e9f3e4e46f60
   - enabled: 1
     path: Assets/Scenes/Halaman Kampus.unity
     guid: 450169e72852de248a7817eee92f1b72
