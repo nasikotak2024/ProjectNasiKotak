@@ -11,7 +11,7 @@ public class PlayerHide : MonoBehaviour
     void Start()
     {
         playerMovement = GetComponent<Topdown>();
-        aiScript = FindObjectOfType<AdvancedAIChaseAndReturn2D>(); // Mendapatkan referensi ke AI
+        aiScript = FindObjectOfType<AdvancedAIChaseAndReturn2D>(); 
     }
 
     void Update()
@@ -36,7 +36,7 @@ public class PlayerHide : MonoBehaviour
         playerMovement.enabled = false;
         if (aiScript != null)
         {
-            aiScript.PlayerHiding(true); // Memberi tahu AI bahwa pemain bersembunyi
+            aiScript.PlayerHiding(true);
         }
     }
 
@@ -47,7 +47,7 @@ public class PlayerHide : MonoBehaviour
         playerMovement.enabled = true;
         if (aiScript != null)
         {
-            aiScript.PlayerHiding(false); // Memberi tahu AI bahwa pemain tidak lagi bersembunyi
+            aiScript.PlayerHiding(false);
         }
     }
 

@@ -800,7 +800,7 @@ Transform:
   m_GameObject: {fileID: 95975469}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000017749066, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.00000023841858, z: -10}
+  m_LocalPosition: {x: 0, y: 0.26000023, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1241597002}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 1
+    OrthographicSize: 1.3
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1170,11 +1170,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ReferencePixelsPerUnit: 10
+  m_ScaleFactor: 0.38
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1518,8 +1518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 152, y: 62.772}
+  m_SizeDelta: {x: 200, y: 375.544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362298369
 MonoBehaviour:
@@ -1541,8 +1541,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5fcea6638271ba044946812ef92b393d, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 5342308601464108211, guid: 4d6f050b1ee2d274e9acc0873290d34a, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1550,7 +1550,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.01
 --- !u!222 &362298370
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f7073d254ad1341b9a344c38117201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GantiScene: Dalam Kampus
+  GantiScene: Cut Desa
 --- !u!61 &403717057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2159,7 +2159,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 1.3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2184,7 +2184,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000017749066, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4325609, y: -2.5150297, z: -10}
+  m_LocalPosition: {x: -0.8975766, y: -2.2150297, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2630,7 +2630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &623544633
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3673,7 +3673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -500, y: -160}
+  m_AnchoredPosition: {x: -254, y: -170}
   m_SizeDelta: {x: -1100, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &845865731
@@ -3689,14 +3689,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 2193479657588290036, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3837,6 +3837,7 @@ MonoBehaviour:
   speaker:
   - Nirma
   - Pak Banu
+  - Pak Banu
   - Nirma
   - Pak Banu
   - Nirma
@@ -3846,9 +3847,9 @@ MonoBehaviour:
   - Selamat pagi, Pak. Saya ingin berkonsultasi mengenai tugas akhir saya, dan ini
     laporan-laporan tugas akhir yang baru saya kerjakan. (memberikan lembaran tugas)
   - Iya, selamat pagi, Nirma. Coba saya periksa dulu, ya. (memeriksa tugas Nirma).
-    Nirma, menurut saya, laporan kamu tidak sesuai. Ditambah, saya tahu bahwa data-data
-    yang kamu peroleh ini tidak valid karena mengambil data dari tugas orang lain
-    yang ada di internet.
+    Nirma, menurut saya, laporan kamu tidak sesuai.
+  - Ditambah, saya tahu bahwa data-data yang kamu peroleh ini tidak valid karena
+    mengambil data dari tugas orang lain yang ada di internet.
   - (terkejut dan malu) Saya minta maaf, Pak. Saya akui, saya kesulitan mengumpulkan
     data yang akurat, jadi saya mencoba mencari referensi dari internet. Tapi, saya
     tidak bermaksud untuk mengandalkan data yang tidak valid.
@@ -3861,6 +3862,7 @@ MonoBehaviour:
   - Terima kasih, Pak. Saya akan mengusahakannya sebaik mungkin.
   portrait:
   - {fileID: 5342308601464108211, guid: 4d6f050b1ee2d274e9acc0873290d34a, type: 3}
+  - {fileID: 4775108153550247571, guid: be050e39a6ebb304b8d88433dd2b8647, type: 3}
   - {fileID: 4775108153550247571, guid: be050e39a6ebb304b8d88433dd2b8647, type: 3}
   - {fileID: 5342308601464108211, guid: 4d6f050b1ee2d274e9acc0873290d34a, type: 3}
   - {fileID: 4775108153550247571, guid: be050e39a6ebb304b8d88433dd2b8647, type: 3}
@@ -5686,7 +5688,7 @@ MonoBehaviour:
   m_ZDamping: 0
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenY: 0.6
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -6292,14 +6294,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 2193479657588290036, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6907,8 +6909,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6925,13 +6927,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -6961,7 +6963,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 15, y: 0, z: 0, w: 0}
+  m_margin: {x: 39.55075, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7300,7 +7302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1962910040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7308,7 +7310,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962910039}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69eaa64ff08a1584a9fbab2e0db89399, type: 3}
   m_Name: 
@@ -7316,7 +7318,7 @@ MonoBehaviour:
   itemNames: []
   objectiveText: {fileID: 363212239}
   objectiveUI: {fileID: 1258231102}
-  isPakBanuDialogCompleted: 0
+  isPakBanuDialogCompleted: 1
 --- !u!4 &1962910041
 Transform:
   m_ObjectHideFlags: 0
@@ -7399,7 +7401,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7416,10 +7418,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

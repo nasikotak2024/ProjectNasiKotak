@@ -28,13 +28,11 @@ public class BuildingReport : MonoBehaviour
                     dialogueCanvas.SetActive(false);
                     dialogueActive = false;
                     Time.timeScale = 1f; // Resume game time
-
                 }
             }
             else
             {
                 ShowDialogue();
-
             }
         }
     }
@@ -45,7 +43,6 @@ public class BuildingReport : MonoBehaviour
         if (ObjectiveManager.instance.AreAllItemsCollected())
         {
             dialogueText.text = completedObjectiveDialogue;
-
         }
         else
         {
@@ -53,7 +50,6 @@ public class BuildingReport : MonoBehaviour
         }
         dialogueActive = true;
         Time.timeScale = 0f; // Pause game time
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,17 +57,12 @@ public class BuildingReport : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = true;
-
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
-            Time.timeScale = 1f; // Resume game time
-        }
-        else
         {
             playerInRange = false;
             dialogueCanvas.SetActive(false);

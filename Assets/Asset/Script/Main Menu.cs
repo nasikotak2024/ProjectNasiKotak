@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
     {        
         Time.timeScale = 1f;
         PlayerPrefs.DeleteAll(); // Opsional: Reset game progress
-        SceneManager.LoadScene("Cutscene 1"); // Ganti dengan nama scene pertama Anda
+        SceneManager.LoadScene("Cut Op 1"); // Ganti dengan nama scene pertama Anda
     }
 
     public void Continue()
